@@ -20,3 +20,7 @@
 - I decided to create a folder of `layouts` for components that did not deal with any data.
 
 - Overall I would have liked to gone farther but the CORS error stumped me for a while. I have opened issues for the next items I would tackle.
+
+## Screenshot
+
+![Screen Shot 2020-07-07 at 4 16 12 PM](https://user-images.githubusercontent.com/48968224/86849618-2e5c7180-c06d-11ea-9c52-808e19be70ef.png)
