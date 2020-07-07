@@ -7,7 +7,7 @@
           <h2>Accounts</h2>
         </div>
         <section class="grid" id="account-grid">
-          <ActiveContainer />
+          <ActiveContainer v-bind:activeAcc="activeAcc" />
           <OverdueContainer />
           <InactiveContainer />
         </section>
@@ -36,8 +36,8 @@ export default {
   data() {
     return {
       activeAcc: [],
+      inactiveAcc: [],
       overdueAcc: [],
-      inactiveAcc: []
     }
   },
   created() {
@@ -45,8 +45,8 @@ export default {
     .then(data => data.json())
     .then(res => {
       this.activeAcc = res.filter(accInfo => accInfo.AccountStatusId === 0);
-      this.overdueAcc = res.filter(accInfo => accInfo.AccountStatusId === 2);
       this.inactiveAcc = res.filter(accInfo => accInfo.AccountStatusId === 1)
+      this.overdueAcc = res.filter(accInfo => accInfo.AccountStatusId === 2);
     })
     .catch(err => console.log(err))
   }
