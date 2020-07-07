@@ -8,8 +8,8 @@
         </div>
         <section class="grid" id="account-grid">
           <ActiveContainer v-bind:activeAcc="activeAcc" />
-          <OverdueContainer />
-          <InactiveContainer />
+          <OverdueContainer v-bind:overdueAcc="overdueAcc"/>
+          <InactiveContainer v-bind:inactiveAcc="inactiveAcc"/>
         </section>
       </main>
       <Footer />
