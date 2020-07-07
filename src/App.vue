@@ -31,7 +31,7 @@ export default {
     Footer,
     ActiveContainer,
     InactiveContainer,
-    OverdueContainer
+    OverdueContainer,
   },
   data() {
     return {
