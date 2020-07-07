@@ -7,48 +7,9 @@
           <h2>Accounts</h2>
         </div>
         <section class="grid" id="account-grid">
-          <section class="account-column grid" id="active-account-column">
-            <div class="account-container-title" id="active-account-container-title">
-              <h3>Active</h3>
-            </div>
-            <div class="account-container active-account">
-              <ul class="account-data-list">
-                <li><label>Name:</label>LastName, FirstName</li>
-                <li><label>Email:</label>Email</li>
-                <li><label>Phone Number:</label>PhoneNumber</li>
-                <li><label>Amount Due:</label>AmountDue</li>
-                <li><label>Due Date:</label>DueDate</li>
-              </ul>
-            </div>     
-          </section>
-          <section class="account-column grid" id="overdue-account-column">
-            <div class="account-container-title" id="overdue-account-container-title">
-              <h3>Overdue</h3>
-            </div>
-            <div class="account-container overdue-account">
-              <ul class="account-data-list">
-                <li><label>Name:</label>LastName, FirstName</li>
-                <li><label>Email:</label>Email</li>
-                <li><label>Phone Number:</label>PhoneNumber</li>
-                <li><label>Amount Due:</label>AmountDue</li>
-                <li><label>Due Date:</label>DueDate</li>
-              </ul>
-            </div>
-          </section>
-          <div class="account-column grid" id="inactive-account-column">
-            <div class="account-container-title" id="inactive-account-container-title">
-              <h3>Inactive</h3>
-            </div>
-            <div class="account-container inactive-account">
-              <ul class="account-data-list">
-                <li><label>Name:</label>LastName, FirstName</li>
-                <li><label>Email:</label>Email</li>
-                <li><label>Phone Number:</label>PhoneNumber</li>
-                <li><label>Amount Due:</label>AmountDue</li>
-                <li><label>Due Date:</label>DueDate</li>
-              </ul>
-            </div>
-          </div>
+          <ActiveContainer />
+          <OverdueContainer />
+          <InactiveContainer />
         </section>
       </main>
       <Footer />
@@ -59,12 +20,18 @@
 <script>
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
+import ActiveContainer from './components/ActiveContainer'
+import InactiveContainer from './components/InactiveContainer'
+import OverdueContainer from './components/OverdueContainer'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer
+    Footer,
+    ActiveContainer,
+    InactiveContainer,
+    OverdueContainer
   }
 }
 </script>
@@ -91,10 +58,10 @@ export default {
       h3 {
         display: block;
         font-size: 1.5em;
-        color:#006643;
       }
       main {
         grid-area: main;
+        overflow: scroll;
       }
       .grid {
         display: grid;
@@ -118,12 +85,6 @@ export default {
         justify-self: center;
         height: 1em;
         grid-row-start: 2;
-      }
-      #overdue-account-container-title > h3{
-        color: #B22222;
-      }
-      #inactive-account-container-title > h3 {
-        color:#808080;
       }
       .account-container {
         justify-self: center;
