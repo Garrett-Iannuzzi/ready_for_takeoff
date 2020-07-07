@@ -3,25 +3,28 @@
     <div class="account-container-title" id="inactive-account-container-title">
       <h3>Inactive</h3>
     </div>
-    <div class="account-container inactive-account">
+      <div class="account-container active-account" v-bind:key="inactiveAcc.id" v-for="inactiveAcc in inactiveAcc">
       <ul class="account-data-list">
-        <li><label>Name:</label>LastName, FirstName</li>
-        <li><label>Email:</label>Email</li>
-        <li><label>Phone Number:</label>PhoneNumber</li>
-        <li><label>Amount Due:</label>AmountDue</li>
-        <li><label>Due Date:</label>DueDate</li>
+        <li><label>Name:</label>{{ inactiveAcc.LastName }}, {{inactiveAcc.FirstName}}</li>
+        <li><label>Email:</label>{{inactiveAcc.Email}}</li>
+        <li><label>Phone Number:</label>{{inactiveAcc.PhoneNumber}}</li>
+        <li><label>Amount Due:</label>{{inactiveAcc.AmountDue}}</li>
       </ul>
-    </div>
+    </div>    
   </section>
 </template>
 
 <script>
+
 export default {
-  name: "InactiveContainer"
+  name: "InactiveContainer",
+  props: ["inactiveAcc"]
 }
+
 </script>
+
 <style>
-  #inactive-account-container-title > h3 {
+  #inactive-account-container-title > zh3 {
     color:#808080;
   }
 </style>

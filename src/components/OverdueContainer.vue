@@ -3,21 +3,22 @@
     <div class="account-container-title" id="overdue-account-container-title">
       <h3>Overdue</h3>
     </div>
-    <div class="account-container overdue-account">
+    <div class="account-container active-account" v-bind:key="overdueAcc.id" v-for="overdueAcc in overdueAcc">
       <ul class="account-data-list">
-        <li><label>Name:</label>LastName, FirstName</li>
-        <li><label>Email:</label>Email</li>
-        <li><label>Phone Number:</label>PhoneNumber</li>
-        <li><label>Amount Due:</label>AmountDue</li>
-        <li><label>Due Date:</label>DueDate</li>
+        <li><label>Name:</label>{{ overdueAcc.LastName }}, {{overdueAcc.FirstName}}</li>
+        <li><label>Email:</label>{{overdueAcc.Email}}</li>
+        <li><label>Phone Number:</label>{{overdueAcc.PhoneNumber}}</li>
+        <li><label>Amount Due:</label>{{overdueAcc.AmountDue}}</li>
       </ul>
-    </div>
+    </div>    
   </section>
 </template>
 
 <script>
+
 export default {
-  name: "OverdueContainer"
+  name: "OverdueContainer",
+  props: ["overdueAcc"]
 }
 </script>
 

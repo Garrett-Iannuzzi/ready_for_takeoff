@@ -3,13 +3,13 @@
     <div class="account-container-title" id="active-account-container-title">
       <h3>Active</h3>
     </div>
-    <div class="account-container active-account">
+    <div class="account-container active-account" v-bind:key="activeAcc.id" v-for="activeAcc in activeAcc">
       <ul class="account-data-list">
-        <li><label>Name:</label>LastName, FirstName</li>
-        <li><label>Email:</label>Email</li>
-        <li><label>Phone Number:</label>PhoneNumber</li>
-        <li><label>Amount Due:</label>AmountDue</li>
-        <li><label>Due Date:</label>DueDate</li>
+        <li><label>Name:</label>{{ activeAcc.LastName }}, {{activeAcc.FirstName}}</li>
+        <li><label>Email:</label>{{activeAcc.Email}}</li>
+        <li><label>Phone Number:</label>{{activeAcc.PhoneNumber}}</li>
+        <li><label>Amount Due:</label>{{activeAcc.AmountDue}}</li>
+        <li><label>Due Date:</label>{{ activeAcc.DueDate}}</li>
       </ul>
     </div>     
   </section>
@@ -17,8 +17,9 @@
 
 <script>
 export default {
-  name: "ActiveContainer"
-}
+    name: "ActiveContainer",
+    props: ["activeAcc"],
+  }
 </script>
 
 <style>
