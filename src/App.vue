@@ -32,6 +32,23 @@ export default {
     ActiveContainer,
     InactiveContainer,
     OverdueContainer
+  },
+  data() {
+    return {
+      activeAcc: [],
+      overdueAcc: [],
+      inactiveAcc: []
+    }
+  },
+  created() {
+    return fetch('https://cors-anywhere.herokuapp.com/https://frontiercodingtests.azurewebsites.net/api/accounts/getall')
+    .then(data => data.json())
+    .then(res => {
+      this.activeAcc = res.filter(accInfo => accInfo.AccountStatusId === 0);
+      this.overdueAcc = res.filter(accInfo => accInfo.AccountStatusId === 2);
+      this.inactiveAcc = res.filter(accInfo => accInfo.AccountStatusId === 1)
+    })
+    .catch(err => console.log(err))
   }
 }
 </script>
