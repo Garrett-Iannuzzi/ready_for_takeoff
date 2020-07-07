@@ -51,20 +51,20 @@
           </div>
         </section>
       </main>
-      <footer class="grid">
-        <!-- <p class="copy">&copy;<script>document.write(new Date().getFullYear())</script></p> -->
-      </footer>
+      <Footer />
     </section>
   </div>
 </template>
 
 <script>
 import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
 
 export default {
   name: 'App',
   components: {
-
+    Header,
+    Footer
   }
 }
 </script>
@@ -95,13 +95,6 @@ export default {
       }
       main {
         grid-area: main;
-      }
-      footer {
-        grid-area: footer;
-        background-color:#006643;
-        color: #fff;
-        grid-template-columns: 1% 98% 1%;
-        grid-template-rows: 5% 90% 5%;
       }
       .grid {
         display: grid;
@@ -148,10 +141,5 @@ export default {
       .account-data-list > li > label {
         font-weight: bold;
         margin: 0 5px 0 0;
-      }
-      .copy {
-        place-self: end;
-        grid-row-start: 2;
-        grid-column-start: 2;
       }
 </style>
