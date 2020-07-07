@@ -1,11 +1,7 @@
 <template>
   <div id="app">
     <section class="grid grid-sections">
-      <header class="grid">
-        <div class="title-container">
-          <h1>Coding Test</h1>
-        </div>
-      </header>
+      <Header />
       <main class="content grid" id="home-content">
         <div class="content-title-container">
           <h2>Accounts</h2>
@@ -63,6 +59,7 @@
 </template>
 
 <script>
+import Header from './components/layout/Header'
 
 export default {
   name: 'App',
@@ -86,16 +83,6 @@ export default {
             "main"
             "footer";
         grid-template-rows: 100px 1fr 150px;
-      }
-      header {
-        grid-area: header;
-        background-color:#006643;
-        color: #fff;
-        grid-template-columns: 1% 98% 1%;
-      }
-      h1 {
-        font-size: 3em;
-        font-weight: bold;
       }
       h2 {
         font-size: 2em;
