@@ -9,6 +9,7 @@
         <li><label>Email:</label>{{overdueAcc.Email}}</li>
         <li><label>Phone Number:</label>{{overdueAcc.PhoneNumber}}</li>
         <li><label>Amount Due:</label>{{overdueAcc.AmountDue}}</li>
+        <li><label>Due Date:</label>{{ overdueAcc.PaymentDueDate}}</li>
       </ul>
     </div>    
   </section>
