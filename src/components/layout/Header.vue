@@ -1,7 +1,7 @@
 <template>
   <header class="grid">
     <div class="title-container">
-      <h1>Coding Test</h1>
+      <h1>Frontier Airlines</h1>
     </div>
   </header>
 </template>

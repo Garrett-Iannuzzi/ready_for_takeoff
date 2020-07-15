@@ -7,9 +7,9 @@
       <ul class="account-data-list">
         <li><label>Name:</label>{{ activeAcc.LastName }}, {{activeAcc.FirstName}}</li>
         <li><label>Email:</label>{{activeAcc.Email}}</li>
-        <li><label>Phone Number:</label>{{activeAcc.PhoneNumber}}</li>
-        <li><label>Amount Due:</label>{{activeAcc.AmountDue}}</li>
-        <li><label>Due Date:</label>{{ activeAcc.DueDate}}</li>
+        <li><label>Phone Number:</label>{{ formatPhone(activeAcc.PhoneNumber)}}</li>
+        <li><label>Amount Due:</label>${{activeAcc.AmountDue}}</li>
+        <li><label>Due Date:</label>{{ formatDate(activeAcc.PaymentDueDate)}}</li>
       </ul>
     </div>     
   </section>
@@ -19,6 +19,15 @@
 export default {
     name: "ActiveContainer",
     props: ["activeAcc"],
+    methods: {
+      formatDate(str) {
+        const date = str.slice(0, 10).split('-').reverse()
+        return `${date[0]}/${date[1]}/${date[2]}`
+      },
+      formatPhone(num) {
+        return `(${num.slice(0, 3)})-${num.slice(3, 6)}-${num.slice(6, 10)}`
+      }
+    }
   }
 </script>
 

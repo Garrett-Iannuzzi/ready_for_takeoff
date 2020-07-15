@@ -7,8 +7,8 @@
       <ul class="account-data-list">
         <li><label>Name:</label>{{ inactiveAcc.LastName }}, {{inactiveAcc.FirstName}}</li>
         <li><label>Email:</label>{{inactiveAcc.Email}}</li>
-        <li><label>Phone Number:</label>{{inactiveAcc.PhoneNumber}}</li>
-        <li><label>Amount Due:</label>{{inactiveAcc.AmountDue}}</li>
+        <li><label>Phone Number:</label>{{ formatPhone(inactiveAcc.PhoneNumber)}}</li>
+        <li><label>Amount Due:</label>${{inactiveAcc.AmountDue}}</li>
       </ul>
     </div>    
   </section>
@@ -18,7 +18,12 @@
 
 export default {
   name: "InactiveContainer",
-  props: ["inactiveAcc"]
+  props: ["inactiveAcc"],
+  methods: {
+    formatPhone(num) {
+      return `(${num.slice(0, 3)})-${num.slice(3, 6)}-${num.slice(6, 10)}`
+    }
+  }
 }
 
 </script>

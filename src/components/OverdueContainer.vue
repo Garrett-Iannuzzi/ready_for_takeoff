@@ -7,8 +7,9 @@
       <ul class="account-data-list">
         <li><label>Name:</label>{{ overdueAcc.LastName }}, {{overdueAcc.FirstName}}</li>
         <li><label>Email:</label>{{overdueAcc.Email}}</li>
-        <li><label>Phone Number:</label>{{overdueAcc.PhoneNumber}}</li>
-        <li><label>Amount Due:</label>{{overdueAcc.AmountDue}}</li>
+        <li><label>Phone Number:</label>{{formatPhone(overdueAcc.PhoneNumber)}}</li>
+        <li><label>Amount Due:</label>${{overdueAcc.AmountDue}}</li>
+        <li><label>Due Date:</label>{{formatDate(overdueAcc.PaymentDueDate)}}</li>
       </ul>
     </div>    
   </section>
@@ -18,7 +19,16 @@
 
 export default {
   name: "OverdueContainer",
-  props: ["overdueAcc"]
+  props: ["overdueAcc"],
+  methods: {
+    formatDate(str) {
+      const date = str.slice(0, 10).split('-').reverse()
+      return `${date[0]}/${date[1]}/${date[2]}`
+    },
+    formatPhone(num) {
+      return `(${num.slice(0, 3)})-${num.slice(3, 6)}-${num.slice(6, 10)}`
+  }
+  }
 }
 </script>
 
