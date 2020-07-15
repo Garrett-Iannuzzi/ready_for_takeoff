@@ -1,6 +1,6 @@
 <template>
   <footer class="grid">
-    <h6>Footer</h6>
+    <!-- <h6>Footer</h6> -->
     <!-- <p class="copy">&copy;<script>document.write(new Date().getFullYear())</script></p> -->
   </footer>
 </template>
