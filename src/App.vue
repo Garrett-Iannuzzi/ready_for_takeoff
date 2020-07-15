@@ -7,8 +7,8 @@
           <h2>Accounts</h2>
         </div>
         <section class="grid" id="account-grid">
-          <ActiveContainer v-bind:activeAcc="activeAcc" />
-          <OverdueContainer v-bind:overdueAcc="overdueAcc"/>
+          <ActiveContainer v-bind:activeAcc="activeAcc" @format-date="formatDate" />
+          <OverdueContainer v-bind:overdueAcc="overdueAcc" v-on:format-date="formatDate"/>
           <InactiveContainer v-bind:inactiveAcc="inactiveAcc"/>
         </section>
       </main>
@@ -49,6 +49,12 @@ export default {
       this.overdueAcc = res.filter(accInfo => accInfo.AccountStatusId === 2);
     })
     .catch(err => console.log(err))
+  },
+  methods: {
+    formatDate(str) {
+      const date = str.slice(0, 10).split('-').reverse()
+      return `${date[0]}/${date[1]}/${date[2]}`
+    }
   }
 }
 </script>

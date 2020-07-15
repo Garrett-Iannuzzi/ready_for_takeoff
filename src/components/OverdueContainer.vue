@@ -9,7 +9,7 @@
         <li><label>Email:</label>{{overdueAcc.Email}}</li>
         <li><label>Phone Number:</label>{{overdueAcc.PhoneNumber}}</li>
         <li><label>Amount Due:</label>{{overdueAcc.AmountDue}}</li>
-        <li><label>Due Date:</label>{{ overdueAcc.PaymentDueDate}}</li>
+        <li><label>Due Date:</label>{{formatDate(overdueAcc.PaymentDueDate)}}</li>
       </ul>
     </div>    
   </section>
@@ -19,7 +19,13 @@
 
 export default {
   name: "OverdueContainer",
-  props: ["overdueAcc"]
+  props: ["overdueAcc"],
+  methods: {
+    formatDate(str) {
+      const date = str.slice(0, 10).split('-').reverse()
+      return `${date[0]}/${date[1]}/${date[2]}`
+    }
+  }
 }
 </script>
 
