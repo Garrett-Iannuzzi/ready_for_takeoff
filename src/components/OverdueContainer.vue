@@ -8,7 +8,7 @@
         <li><label>Name:</label>{{ overdueAcc.LastName }}, {{overdueAcc.FirstName}}</li>
         <li><label>Email:</label>{{overdueAcc.Email}}</li>
         <li><label>Phone Number:</label>{{formatPhone(overdueAcc.PhoneNumber)}}</li>
-        <li><label>Amount Due:</label>{{overdueAcc.AmountDue}}</li>
+        <li><label>Amount Due:</label>${{overdueAcc.AmountDue}}</li>
         <li><label>Due Date:</label>{{formatDate(overdueAcc.PaymentDueDate)}}</li>
       </ul>
     </div>    

@@ -8,7 +8,7 @@
         <li><label>Name:</label>{{ inactiveAcc.LastName }}, {{inactiveAcc.FirstName}}</li>
         <li><label>Email:</label>{{inactiveAcc.Email}}</li>
         <li><label>Phone Number:</label>{{ formatPhone(inactiveAcc.PhoneNumber)}}</li>
-        <li><label>Amount Due:</label>{{inactiveAcc.AmountDue}}</li>
+        <li><label>Amount Due:</label>${{inactiveAcc.AmountDue}}</li>
       </ul>
     </div>    
   </section>
